@@ -1,3 +1,11 @@
+
+const indexedDB =
+window.indexedDB ||
+window.mozIndexedDB ||
+window.webkitIndexedDB ||
+window.msIndexedDB ||
+window.shimIndexedDB;
+
 let db;
 // create a new db request for a "budget" database.
 const request = indexedDB.open("budget", 1);
@@ -38,7 +46,7 @@ function checkDatabase() {
   // access your pending object store
   const store = transaction.objectStore("pending");
   // get all records from store and set to a variable
-  const getAll = store.getAll();
+  const getAll = store.getAll();``
 
   getAll.onsuccess = function() {
     if (getAll.result.length > 0) {
